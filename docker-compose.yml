@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  sportfin:
+    container_name: sportfin-help-center
+    stdin_open: true
+    tty: true
+    build: .
+    volumes:
+      - type: bind
+        source: ./
+        target: /code
+    ports: 
+      - 80:80
+    env_file:
+      - .env
